@@ -28,22 +28,18 @@ header {
 .container {
     display: flex;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: flex-start; /* Mengatur elemen ke atas */
     flex-wrap: wrap;
     margin-top: 50px;
 }
 
 .info-box {
-    flex-basis: 30%;
+    flex-basis: 30%; /* Atur ukuran dasar untuk info-box */
     padding: 20px;
     background-color: #f0f0f0;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-    width: 200px; /* Atur lebar */
-    height: 200px; /* Atur tinggi */
-    min-width: 200px; /* Atur lebar minimum */
-    min-height: 200px; /* Atur tinggi minimum */
 }
 
 .info-box h2 {
@@ -69,11 +65,4 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-}
-
-/* Media query untuk layar yang lebih kecil */
-@media (max-width: 768px) {
-    .info-box {
-        flex-basis: 100%; /* Setiap info-box akan mengisi lebar penuh */
-    }
 }
