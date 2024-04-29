@@ -40,10 +40,10 @@ header {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-    width: 200px; /* Atur lebar */
+    width: 300px; /* Atur lebar */
     height: 200px; /* Atur tinggi */
     min-width: 200px; /* Atur lebar minimum */
-    min-height: 200px; /* Atur tinggi minimum */
+    min-height: 150px; /* Atur tinggi minimum */
 }
 
 .info-box h2 {
@@ -69,4 +69,5 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
+    align-items: center;
 }
