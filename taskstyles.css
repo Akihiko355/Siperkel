@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; /* Menempatkan elemen ke tepi kanan */
+    align-items: center; /* Pusatkan vertikal elemen */
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    background-color: #007bff;
+}
+
+.nav-links a {
+    margin-right: 20px;
+    color: #fff; /* Atur warna teks untuk tombol */
+    text-decoration: none; /* Hilangkan garis bawah dari tautan */
+}
+
+.container {
+    display: flex;
+}
+
+#left-sidebar {
+    flex: 1;
+    padding: 20px;
+}
+
+#right-sidebar {
+    flex: 1;
+    padding: 20px;
+}
+
+textarea, button {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.task {
+    margin-bottom: 20px;
+}
+
+.task h2 {
+    margin-bottom: 10px;
+}
+
+.result {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 50px;
+}

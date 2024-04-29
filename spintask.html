@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sikeltassk</title>
+<link rel="stylesheet" href="taskstyles.css">
+</head>
+<body>
+
+<header>
+    <h1>SiTask</h1>
+    <div class="nav-links">
+        <a href="index.html">SiKelper</a>
+        <a href="spintask.html">SiTask</a>
+        <a href="support.html">SilPort</a>
+    </div>
+</header>
+
+<div class="container">
+    <div id="left-sidebar">
+        <h2>Masukkan Nama</h2>
+        <textarea id="namesInput" rows="10" placeholder="Masukkan nama-nama satu per baris. Semua input angka dan simbol bisa masuk dan akan di hapus secara otomatis."></textarea>
+        <button onclick="spin('moderator')">Get Moderator</button>
+        <button onclick="spin('presentator1')">Get Presentator 1</button>
+        <button onclick="spin('presentator2')">Get Presentator 2</button>
+        <button onclick="spin('pertanyaan')">Get Pemberi Pertanyaan</button>
+        <button onclick="spin('jawaban')">Get Pemberi Jawaban</button>
+        <button onclick="reset()">Reset</button>
+        <div class="note">
+            <h3>Catatan : Nama Nama yang ada di input, akan secara otomatis terhapus ketika sudah terpilih</h3>
+        </div>
+    </div>
+    <div id="right-sidebar">
+        <div class="task">
+            <h2>Tugas Moderator</h2>
+            <div id="moderatorResult" class="result"></div>
+        </div>
+        <div class="task">
+            <h2>Tugas Presentator 1</h2>
+            <div id="presentator1Result" class="result"></div>
+        </div>
+        <div class="task">
+            <h2>Tugas Presentator 2</h2>
+            <div id="presentator2Result" class="result"></div>
+        </div>
+        <div class="task">
+            <h2>Tugas Pemberi Pertanyaan</h2>
+            <div id="pertanyaanResult" class="result"></div>
+        </div>
+        <div class="task">
+            <h2>Tugas Pemberi Jawaban</h2>
+            <div id="jawabanResult" class="result"></div>
+        </div>
+    </div>
+</div>
+
+<script src="taskscript.js"></script>
+</body>
+</html>
