@@ -42,7 +42,7 @@ header {
     margin-bottom: 20px;
     width: 300px; /* Atur lebar */
     height: 200px; /* Atur tinggi */
-    min-width: 200px; /* Atur lebar minimum */
+    min-width: 250px; /* Atur lebar minimum */
     min-height: 150px; /* Atur tinggi minimum */
 }
 
