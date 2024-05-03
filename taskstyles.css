@@ -71,3 +71,18 @@ button {
         flex-basis: 100%;
     }
 }
+
+button {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: #007bff; /* Warna biru */
+    color: #fff; /* Warna teks putih */
+    border: none; /* Menghapus border */
+    padding: 10px; /* Mengatur padding */
+    cursor: pointer; /* Mengubah kursor menjadi tangan saat dihover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Warna biru yang lebih gelap saat dihover */
+}
