@@ -7,7 +7,7 @@ body {
 header {
     background-color: #007bff;
     color: #fff;
-    padding: 20px;
+    padding: 6px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,6 +20,7 @@ header {
 
 .nav-links a {
     margin-right: 20px;
+    font-family: Arial;
     color: #fff;
     text-decoration: none;
 }
@@ -57,7 +58,20 @@ button {
 .result {
     border: 1px solid #ccc;
     padding: 10px;
-    min-height: 50px;
+    min-height: 10px; /* Menetapkan tinggi minimum untuk kotak hasil */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Menghilangkan konten yang melebihi kotak */
+    text-overflow: ellipsis; /* Menambahkan elipsis jika teks terlalu panjang */
+    white-space: nowrap; /* Mencegah teks berpindah baris */
+    width: 40%; /* Menetapkan lebar kotak hasil */
+    height: 13px; /* Menetapkan tinggi kotak hasil */
+    position: relative; /* Menetapkan posisi relatif */
+}
+
+.result span {
+    font-size: 5px; /* Ukuran font awal */
 }
 
 /* Media query untuk layar yang lebih kecil */
