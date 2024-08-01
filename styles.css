@@ -7,10 +7,10 @@ body {
 header {
     background-color: #007bff;
     color: #fff;
-    padding: 20px;
+    padding: 6px;
     display: flex;
-    justify-content: space-between; /* Menempatkan elemen ke tepi kanan */
-    align-items: center; /* Pusatkan vertikal elemen */
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav-links {
@@ -21,12 +21,14 @@ header {
 
 .nav-links a {
     margin-right: 20px;
-    color: #fff; /* Atur warna teks untuk tombol */
-    text-decoration: none; /* Hilangkan garis bawah dari tautan */
+    color: #fff;
+    text-decoration: none;
 }
 
 .container {
     display: flex;
+    flex-direction: column;
+    padding: 20px;
 }
 
 #left-sidebar {
@@ -42,14 +44,55 @@ textarea, input, button {
 
 button {
     padding: 10px;
-    background-color: #007bff;
     color: #fff;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#get-result-button {
+    background-color: #007bff;
+}
+
+#get-copy-button {
+    background-color: #007bff;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+#get-copy-button.done {
+    background-color: #007bff;
+    position: relative;
+}
+
+#get-copy-button.done::after {
+    content: "Copy Done";
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 #spinResult {
     font-size: 16px;
     height: 300px;
     overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+#spinBoxResult {
+    font-size: 16px;
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin-top: 20px;
 }
