@@ -5,14 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SilPer</title>
 <link rel="stylesheet" href="styles.css">
-<style>
-    .nav-links {
-        display: flex;
-    }
-    .nav-links a {
-        margin-right: 20px;
-    }
-</style>
 </head>
 <body>
 
@@ -28,11 +20,14 @@
 <div class="container">
     <div id="left-sidebar">
         <h2>Masukkan Nama</h2>
-        <textarea id="namesInput" rows="10" placeholder="Enter the names one per line. All input numbers and symbols can be entered and will be deleted automatically."></textarea>
+        <textarea id="namesInput" rows="10" placeholder="Masukkan nama satu-satu per baris. Semua nomor dan simbol input dapat dimasukkan dan akan dihapus secara otomatis."></textarea>
         <h2>Jumlah Kelompok</h2>
         <input type="number" id="numGroupsInput" placeholder="Masukkan jumlah kelompok">
-        <button onclick="spin()">Get result</button>
-        <h2>Result Here</h2>
+        <div class="button-container">
+            <button id="get-result-button" onclick="spin()">Get Result</button>
+            <button id="get-copy-button" onclick="copyResult()">Get Copy</button>
+        </div>
+        <h2>Hasil Spin</h2>
         <div id="spinResult"></div>
     </div>
 </div>
