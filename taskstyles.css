@@ -86,7 +86,9 @@ button {
         flex-basis: 100%;
     }
 
-    
+    footer {
+        font-size: 12px; /* Ukuran font kecil untuk footer di layar kecil */
+    }
 }
 
 button {
