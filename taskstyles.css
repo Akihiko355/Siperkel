@@ -28,6 +28,7 @@ header {
 .container {
     display: flex;
     flex-wrap: wrap;
+    margin-top: -20px; /* Move content up by 20px */
 }
 
 #left-sidebar {
@@ -65,7 +66,7 @@ button {
     overflow: hidden; /* Menghilangkan konten yang melebihi kotak */
     text-overflow: ellipsis; /* Menambahkan elipsis jika teks terlalu panjang */
     white-space: nowrap; /* Mencegah teks berpindah baris */
-    width: 40%; /* Menetapkan lebar kotak hasil */
+    width: 70%; /* Menetapkan lebar kotak hasil */
     height: 13px; /* Menetapkan tinggi kotak hasil */
     position: relative; /* Menetapkan posisi relatif */
 }
@@ -84,6 +85,8 @@ button {
     #right-sidebar {
         flex-basis: 100%;
     }
+
+    
 }
 
 button {
@@ -95,6 +98,16 @@ button {
     border: none; /* Menghapus border */
     padding: 10px; /* Mengatur padding */
     cursor: pointer; /* Mengubah kursor menjadi tangan saat dihover */
+}
+
+footer {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 6px;
+    position: relative;
+    width: 99%;
+    margin-top: 215px; /* Adjust as needed */
 }
 
 button:hover {
