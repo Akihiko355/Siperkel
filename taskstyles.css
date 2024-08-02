@@ -87,7 +87,8 @@ button {
     }
 
     footer {
-        font-size: 12px; /* Ukuran font kecil untuk footer di layar kecil */
+        font-size: 12px;
+        padding: 10px;
     }
 }
 
