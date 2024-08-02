@@ -80,3 +80,9 @@ footer {
 #simplefed-link:hover {
     text-decoration: underline;
 }
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    footer {
+        font-size: 12px;
+        padding: 10px;
