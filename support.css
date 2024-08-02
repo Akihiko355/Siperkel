@@ -64,10 +64,12 @@ footer {
     background-color: #007bff;
     color: #fff;
     text-align: center;
-    padding: 6px;
-    position: relative;
-    width: 99%;
-    margin-top: 215px; /* Adjust as needed */
+    padding: 15px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: scroll;
 }
 
 #simplefed-link {
@@ -79,8 +81,9 @@ footer {
     text-decoration: underline;
 }
 
-/* Media query for mobile devices */
+/* Media query untuk layar yang lebih kecil */
 @media (max-width: 768px) {
     footer {
-        font-size: 12px;
-        padding: 10px;
+        font-size: 10px; /* Ukuran font kecil untuk footer di layar kecil */
+    }
+}
