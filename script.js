@@ -170,12 +170,12 @@ function copyResult() {
     var spinResult = document.getElementById('spinResult').innerText;
     navigator.clipboard.writeText(spinResult).then(() => {
         var copyButton = document.getElementById('get-copy-button');
-        copyButton.textContent = 'Copy Done';
+        copyButton.textContent = 'Copy Selesai';
         setTimeout(() => {
-            copyButton.textContent = 'Get Copy';
+            copyButton.textContent = 'Copy';
         }, 1000);
     }).catch(err => {
-        console.error('Failed to copy: ', err);
+        console.error('Gagal Copy: ', err);
     });
 }
 
