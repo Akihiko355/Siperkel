@@ -1,17 +1,17 @@
 // Fungsi untuk menghitung jarak Levenshtein
 function levenshteinDistance(a, b) {
     const dp = Array(b.length + 1).fill(null).map(() => Array(a.length + 1).fill(0));
-    
+
     for (let i = 0; i <= a.length; i++) dp[0][i] = i;
     for (let i = 0; i <= b.length; i++) dp[i][0] = i;
-    
+
     for (let i = 1; i <= b.length; i++) {
         for (let j = 1; j <= a.length; j++) {
             const cost = a[j - 1] === b[i - 1] ? 0 : 1;
             dp[i][j] = Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1, dp[i - 1][j - 1] + cost);
         }
     }
-    
+
     return dp[b.length][a.length];
 }
 
@@ -20,7 +20,7 @@ function findSimilarNames(names) {
     const threshold = 3; // Jarak Levenshtein maksimum yang dianggap mirip
     const minLength = 3; // Panjang minimum nama untuk dianggap mirip
     const similarNames = [];
-    
+
     for (let i = 0; i < names.length; i++) {
         for (let j = i + 1; j < names.length; j++) {
             const distance = levenshteinDistance(names[i], names[j]);
@@ -29,7 +29,7 @@ function findSimilarNames(names) {
             }
         }
     }
-    
+
     return similarNames;
 }
 
@@ -168,6 +168,10 @@ function spin() {
 // Fungsi untuk menyalin hasil
 function copyResult() {
     var spinResult = document.getElementById('spinResult').innerText;
+    if (spinResult.trim() === '') {
+        alert('Hasil spin tidak tersedia');
+        return;
+    }
     navigator.clipboard.writeText(spinResult).then(() => {
         var copyButton = document.getElementById('get-copy-button');
         copyButton.textContent = 'Copy Selesai';
@@ -266,14 +270,54 @@ function displayResult(groupedNames) {
     });
 }
 
-const javascriptTextElement = document.getElementById('javascript-text');
-const fullText = '$JavaScript';
-const staticText = ' by Akihiko355 since 2024.';
+const baseText = "Make life $ use $ by Akihiko355 @2024";
+const simplefedText = "$Simplefed";
+const javascriptText = "$JavaScript";
 const animatedTextElement = document.getElementById('animated-text');
 
-let index = 0;
-let forward = true;
+let phase = 0;
 let delay = 0;
+
+const steps = [
+    "Make life $S use $ by Akihiko355 @2024",
+    "Make life $Si use $ by Akihiko355 @2024",
+    "Make life $Sim use $ by Akihiko355 @2024",
+    "Make life $Simp use $ by Akihiko355 @2024",
+    "Make life $Simpl use $ by Akihiko355 @2024",
+    "Make life $Simple use $ by Akihiko355 @2024",
+    "Make life $Simplef use $ by Akihiko355 @2024",
+    "Make life $Simplefe use $ by Akihiko355 @2024",
+    "Make life $Simplefed use $ by Akihiko355 @2024",
+    "Make life $Simplefed use $J by Akihiko355 @2024",
+    "Make life $Simplefed use $Ja by Akihiko355 @2024",
+    "Make life $Simplefed use $Jav by Akihiko355 @2024",
+    "Make life $Simplefed use $Java by Akihiko355 @2024",
+    "Make life $Simplefed use $JavaS by Akihiko355 @2024",
+    "Make life $Simplefed use $JavaSc by Akihiko355 @2024",
+    "Make life $Simplefed use $JavaScr by Akihiko355 @2024",
+    "Make life $Simplefed use $JavaScri by Akihiko355 @2024",
+    "Make life $Simplefed use $JavaScrip by Akihiko355 @2024",
+    "Make life $Simplefed use $JavaScript by Akihiko355 @2024",
+    "Make life $Simplefed use $JavaScrip by Akihiko355 @2024",
+    "Make life $Simplefed use $JavaScri by Akihiko355 @2024",
+    "Make life $Simplefed use $JavaScr by Akihiko355 @2024",
+    "Make life $Simplefed use $JavaSc by Akihiko355 @2024",
+    "Make life $Simplefed use $JavaS by Akihiko355 @2024",
+    "Make life $Simplefed use $Java by Akihiko355 @2024",
+    "Make life $Simplefed use $Jav by Akihiko355 @2024",
+    "Make life $Simplefed use $Ja by Akihiko355 @2024",
+    "Make life $Simplefed use $J by Akihiko355 @2024",
+    "Make life $Simplefed use $ by Akihiko355 @2024",
+    "Make life $Simplefe use $ by Akihiko355 @2024",
+    "Make life $Simplef use $ by Akihiko355 @2024",
+    "Make life $Simple use $ by Akihiko355 @2024",
+    "Make life $Simpl use $ by Akihiko355 @2024",
+    "Make life $Simp use $ by Akihiko355 @2024",
+    "Make life $Sim use $ by Akihiko355 @2024",
+    "Make life $Si use $ by Akihiko355 @2024",
+    "Make life $S use $ by Akihiko355 @2024",
+    "Make life $ use $ by Akihiko355 @2024"
+];
 
 function animateText() {
     if (delay > 0) {
@@ -281,23 +325,18 @@ function animateText() {
         return;
     }
 
-    if (forward) {
-        javascriptTextElement.textContent = fullText.substring(0, index + 1);
-        index++;
-        if (index === fullText.length) {
-            forward = false;
-            delay = 2; // Adjust delay length as needed
-        }
-    } else {
-        javascriptTextElement.textContent = fullText.substring(0, index);
-        index--;
-        if (index === 0) {
-            forward = true;
-            delay = 2; // Adjust delay length as needed
-        }
-    }
+    animatedTextElement.innerHTML = steps[phase];
 
-    animatedTextElement.innerHTML = `Made Simplefed with <span id="javascript-text">${javascriptTextElement.textContent}</span>${staticText}`;
+    phase++;
+
+    if (phase === steps.length) {
+        phase = 0;
+        delay = 2; // 2-second delay
+    } else if (phase === 9) { // 1-second delay after "$Simplefed" animation
+        delay = 5;
+    } else if (phase === 19) { // 2-second delay after "$JavaScript" animation
+        delay = 10;
+    }
 }
 
 setInterval(animateText, 200);
