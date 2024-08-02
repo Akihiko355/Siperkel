@@ -11,6 +11,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .nav-links {
@@ -29,11 +30,15 @@ header {
     display: flex;
     flex-direction: column;
     padding: 20px;
+    margin: 0; /* Remove margin */
+    padding-left: 10px; /* Adjust padding-left to move content to the left */
+    margin-top: -50px; /* Move content up by 20px */
 }
 
 #left-sidebar {
     flex: 1;
     padding: 20px;
+    padding-left: 10px; /* Adjust padding-left to move content to the left */
 }
 
 textarea, input, button {
@@ -85,6 +90,7 @@ button {
     border: 1px solid #ddd;
     padding: 10px;
     background-color: #f9f9f9;
+    margin-top: 20px;
 }
 
 #spinBoxResult {
@@ -95,4 +101,22 @@ button {
     padding: 10px;
     background-color: #f9f9f9;
     margin-top: 20px;
+}
+
+footer {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 6px;
+    position: relative;
+    width: 99%;
+    margin-top: -7px; /* Adjust as needed */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    footer {
+        font-size: 12px;
+        padding: 10px;
+    }
 }
