@@ -96,14 +96,47 @@ function adjustFontSize(taskResultDiv) {
     span.style.fontSize = fontSize + 'px';
 }
 
-const javascriptTextElement = document.getElementById('javascript-text');
-const fullText = '$JavaScript';
-const staticText = ' by Akihiko355 since 2024.';
+const baseText = "Make life $ use $ by Akihiko355 @2024";
+const simplefedText = "$Simplefed";
+const javascriptText = "$JavaScript";
 const animatedTextElement = document.getElementById('animated-text');
 
-let index = 0;
-let forward = true;
+let phase = 0;
 let delay = 0;
+
+const steps = [
+    "Make life $E use $ by Akihiko355 @2024",
+    "Make life $Ea use $ by Akihiko355 @2024",
+    "Make life $Eas use $ by Akihiko355 @2024",
+    "Make life $Easi use $ by Akihiko355 @2024",
+    "Make life $Easie use $ by Akihiko355 @2024",
+    "Make life $Easier use $ by Akihiko355 @2024",
+    "Make life $Easier use $Jby Akihiko355 @2024",
+    "Make life $Easier use $Ja by Akihiko355 @2024",
+    "Make life $Easier use $Jav by Akihiko355 @2024",
+    "Make life $Easier use $Java by Akihiko355 @2024",
+    "Make life $Easier use $JavaS by Akihiko355 @2024",
+    "Make life $Easier use $JavaScr by Akihiko355 @2024",
+    "Make life $Easier use $JavaScri by Akihiko355 @2024",
+    "Make life $Easier use $JavaScrip by Akihiko355 @2024",
+    "Make life $Easier use $JavaScript by Akihiko355 @2024",
+    "Make life $Easier use $JavaScrip by Akihiko355 @2024",
+    "Make life $Easier use $JavaScri by Akihiko355 @2024",
+    "Make life $Easier use $JavaScr by Akihiko355 @2024",
+    "Make life $Easier use $JavaSc by Akihiko355 @2024",
+    "Make life $Easier use $JavaS by Akihiko355 @2024",
+    "Make life $Easier use $Java by Akihiko355 @2024",
+    "Make life $Easier use $Jav by Akihiko355 @2024",
+    "Make life $Easier use $Ja by Akihiko355 @2024",
+    "Make life $Easier use $J by Akihiko355 @2024",
+    "Make life $Easier use $ by Akihiko355 @2024",
+    "Make life $Easie use $ by Akihiko355 @2024",
+    "Make life $Easi use $ by Akihiko355 @2024",
+    "Make life $Eas use $ by Akihiko355 @2024",
+    "Make life $Ea use $ by Akihiko355 @2024",
+    "Make life $E use $ by Akihiko355 @2024",
+    "Make life $ use $ by Akihiko355 @2024",
+];
 
 function animateText() {
     if (delay > 0) {
@@ -111,23 +144,18 @@ function animateText() {
         return;
     }
 
-    if (forward) {
-        javascriptTextElement.textContent = fullText.substring(0, index + 1);
-        index++;
-        if (index === fullText.length) {
-            forward = false;
-            delay = 2; // Adjust delay length as needed
-        }
-    } else {
-        javascriptTextElement.textContent = fullText.substring(0, index);
-        index--;
-        if (index === 0) {
-            forward = true;
-            delay = 2; // Adjust delay length as needed
-        }
-    }
+    animatedTextElement.innerHTML = steps[phase];
 
-    animatedTextElement.innerHTML = `Made Easier with <span id="javascript-text">${javascriptTextElement.textContent}</span>${staticText}`;
+    phase++;
+
+    if (phase === steps.length) {
+        phase = 0;
+        delay = 2; // 2-second delay
+    } else if (phase === 6) { // 1-second delay after "$Simplefed" animation
+        delay = 5;
+    } else if (phase === 15) { // 2-second delay after "$JavaScript" animation
+        delay = 10;
+    }
 }
 
 setInterval(animateText, 200);
