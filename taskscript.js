@@ -95,3 +95,39 @@ function adjustFontSize(taskResultDiv) {
     fontSize--;
     span.style.fontSize = fontSize + 'px';
 }
+
+const javascriptTextElement = document.getElementById('javascript-text');
+const fullText = '$JavaScript';
+const staticText = ' by Akihiko355 since 2024.';
+const animatedTextElement = document.getElementById('animated-text');
+
+let index = 0;
+let forward = true;
+let delay = 0;
+
+function animateText() {
+    if (delay > 0) {
+        delay--;
+        return;
+    }
+
+    if (forward) {
+        javascriptTextElement.textContent = fullText.substring(0, index + 1);
+        index++;
+        if (index === fullText.length) {
+            forward = false;
+            delay = 2; // Adjust delay length as needed
+        }
+    } else {
+        javascriptTextElement.textContent = fullText.substring(0, index);
+        index--;
+        if (index === 0) {
+            forward = true;
+            delay = 2; // Adjust delay length as needed
+        }
+    }
+
+    animatedTextElement.innerHTML = `Made Easier with <span id="javascript-text">${javascriptTextElement.textContent}</span>${staticText}`;
+}
+
+setInterval(animateText, 200);
