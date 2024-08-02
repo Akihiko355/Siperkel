@@ -26,6 +26,6 @@ Working Hours : 30H 20 Minute
 - src 3 : animateJavaScriptText, animateSimplefedLink, updateText, startAnimations
   
 # Last Update : 2 Augus 2024
-Create with JavaScript
-Easier life with JavaScript
-Simplefed life with JavaScript
++ Create with JavaScript
++ Easier life with JavaScript
++ Simplefed life with JavaScript
