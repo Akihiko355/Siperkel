@@ -111,7 +111,7 @@ footer {
     position: relative;
     width: 100%;
     box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
-    margin-top: 260px;
+    margin-top: 270px;
 }
 
 button:hover {
